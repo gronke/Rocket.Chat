@@ -16,8 +16,7 @@ gpg --keyserver ha.pool.sks-keyservers.net --recv-keys 0E163286C20D07B9787EBE9FD
 curl -SLf "https://releases.rocket.chat/latest/download/" -o rocket.chat.tgz
 curl -SLf "https://releases.rocket.chat/latest/asc" -o rocket.chat.tgz.asc
 
-gpg --verify rocket.chat.tgz.asc
-if [ $? -eq 0 ]; then
+if gpg --verify rocket.chat.tgz.asc; then
     echo "Verified download integrity"
 else
     echo "Invalid file, download corrupted or incomplete"
