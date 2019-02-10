@@ -5,7 +5,7 @@ IFS=$'\n\t'
 
 ROOTPATH=/var/www/rocket.chat
 PM2FILE=pm2.json
-if [ "$1" == "development" ]; then
+if [[ "$1" == "development" ]]; then
   ROOTPATH=/var/www/rocket.chat.dev
   PM2FILE=pm2.dev.json
 fi
